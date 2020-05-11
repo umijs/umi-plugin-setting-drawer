@@ -1,12 +1,27 @@
-// ref:
-// - https://umijs.org/plugins/api
-import { IApi } from '@umijs/types';
+import { IApi, utils } from 'umi';
+import { join } from 'path';
+import getLayoutContent from './getLayoutContent';
 
-export default function(api: IApi) {
-  api.logger.info('use plugin');
+const DIR_NAME = 'plugin-setting-drawer';
 
-  api.modifyHTML($ => {
-    $('body').prepend(`<h1>hello umi plugin</h1>`);
-    return $;
+export default (api: IApi) => {
+  api.onGenerateFiles(() => {
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'SettingDrawer.tsx'),
+      content: getLayoutContent(
+        utils.winPath(join(__dirname, './layout/index.js')),
+      ),
+    });
   });
-}
+  api.modifyRoutes(routes => {
+    return [
+      {
+        path: '/',
+        component: utils.winPath(
+          join(api.paths.absTmpPath || '', DIR_NAME, 'SettingDrawer.tsx'),
+        ),
+        routes,
+      },
+    ];
+  });
+};
