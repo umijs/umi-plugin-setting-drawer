@@ -6,7 +6,7 @@ import { SettingDrawer } from '@ant-design/pro-layout';
 const BasicLayout = (props: any) => {
   const { children } = props;
   const initialInfo = useModel ? useModel('@@initialState') : undefined;
-  if (initialInfo) {
+  if (!initialInfo) {
     return children;
   }
   const { initialState, setInitialState } = initialInfo;
