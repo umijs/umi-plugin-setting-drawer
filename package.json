@@ -28,9 +28,6 @@
       "git add"
     ]
   },
-  "dependencies": {
-    "@ant-design/pro-layout": "^5.0.10"
-  },
   "devDependencies": {
     "@types/jest": "^25.1.3",
     "@types/node": "^13.7.7",
@@ -41,6 +38,9 @@
     "react-dom": "^16.12.0",
     "test-umi-plugin": "^0.1.0",
     "umi": "^3.1.0"
+  },
+  "peerDependencies": {
+    "@ant-design/pro-layout": "^5.0.10"
   },
   "authors": {
     "name": "chenshuai2144",
