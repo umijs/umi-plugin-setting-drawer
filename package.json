@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-setting-drawer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "repository": "https://github.com/umijs/umi-plugin-setting-drawer",
   "main": "lib/index.js",
