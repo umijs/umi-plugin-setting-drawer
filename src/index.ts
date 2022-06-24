@@ -1,6 +1,7 @@
-import { IApi, utils } from 'umi';
+import type { IApi } from '@umijs/types';
 import { join } from 'path';
 import getLayoutContent from './getLayoutContent';
+import winPath from './utils/winPath';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 
 const DIR_NAME = 'plugin-setting-drawer';
